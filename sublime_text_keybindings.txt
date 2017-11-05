@@ -1,0 +1,10 @@
+[
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
+	{ "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+	{ "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } },
+	{ "keys": ["super+left"], "command": "move","args": {"by": "wordboundaries", "forward":  false }},
+	{ "keys": ["super+right"], "command": "move","args": {"by": "wordboundaries", "forward":  true }},
+	{ "keys": ["super+shift+left"], "command": "move","args": {"by": "wordboundaries", "forward":  false, "extend": true }},
+	{ "keys": ["super+shift+right"], "command": "move","args": {"by": "wordboundaries", "forward":  true, "extend": true }}
+]
