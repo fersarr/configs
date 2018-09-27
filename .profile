@@ -23,7 +23,17 @@ PROMPT_COMMAND=__prompt_command # Func to gen PS1 after CMDs
 
 __prompt_command() {
     local EXIT="$?"             # This needs to be first
-    PS1=""
+    
+    #check if theres a python venv on
+    if [[ -z "${VIRTUAL_ENV}" ]]; then
+        if [[ -z "${CONDA_PROMPT_MODIFIER}" ]]; then
+            PS1="() "
+        else
+            PS1="${CONDA_PROMPT_MODIFIER}" #already includes space
+        fi
+    else
+        PS1="($(basename ${VIRTUAL_ENV})) "
+    fi
 
     local RCol='\[\e[0m\]'
 
@@ -42,5 +52,32 @@ __prompt_command() {
     fi
 
 
-    PS1+="${RCol}@${LAST2DIRS} ${Pur}\W${BYel}$ ${RCol}"
+    PS1+="${RCol}@${LAST2DIRS} ${BYel}$ ${RCol}"
+
+    #tmux pane
+    if tmux ls &>/dev/null; then #only if we are the same machine as current tmux session
+        tmux rename-window "${LAST2DIRS}"
+    fi
 }
+
+ssh() {
+    box=$1
+    tmux rename-window "$box" #only show box if ssh'd
+    command ssh "$box"
+}
+
+#make ls colorful and show all files, including hidden
+alias ll='ls -Glat'
+alias tree='tree -a'
+alias tree3d='tree -L 3 -d'
+alias tree3='tree -L 3'
+alias gitgraph='git log --all --decorate --oneline --graph'
+export CLICOLOR=1
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+set -o vi
+
+export SHELL_SESSION_HISTORY=0  # disable per-session history so that i can see my history of shell commands
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+alias chrome='open -a "Google Chrome"'
