@@ -23,7 +23,6 @@ PROMPT_COMMAND=__prompt_command # Func to gen PS1 after CMDs
 
 __prompt_command() {
     local EXIT="$?"             # This needs to be first
-    
     #check if theres a python venv on
     if [[ -z "${VIRTUAL_ENV}" ]]; then
         if [[ -z "${CONDA_PROMPT_MODIFIER}" ]]; then
