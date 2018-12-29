@@ -23,6 +23,7 @@ PROMPT_COMMAND=__prompt_command # Func to gen PS1 after CMDs
 
 __prompt_command() {
     local EXIT="$?"             # This needs to be first
+
     #check if theres a python venv on
     if [[ -z "${VIRTUAL_ENV}" ]]; then
         if [[ -z "${CONDA_PROMPT_MODIFIER}" ]]; then
@@ -80,3 +81,6 @@ export SHELL_SESSION_HISTORY=0  # disable per-session history so that i can see 
 export HISTSIZE=5000
 export HISTFILESIZE=5000
 alias chrome='open -a "Google Chrome"'
+
+# if i disable this then conda activate doesnt work
+# set +h  # disable command hashing. interferes with python venvs
