@@ -84,3 +84,6 @@ alias chrome='open -a "Google Chrome"'
 
 # if i disable this then conda activate doesnt work
 # set +h  # disable command hashing. interferes with python venvs
+
+# disable debugging with =0 and use it with breakpoint()
+PYTHONBREAKPOINT=pudb.set_trace
