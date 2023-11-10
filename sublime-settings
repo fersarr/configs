@@ -1,0 +1,33 @@
+{
+	"auto_match_enabled": false,
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"file_exclude_patterns": [
+		"*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so",
+		"*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", ".directory",
+		"desktop.ini", "*.class", "*.psd", "*.db", "*.sublime-workspace",
+		"*.git", "*.svn","*.hg", "*.CVS","*.svg", "*.png","*.jpg", "*.pytest-cache",
+		"*.excalidraw", "*.sql.gz","*.log", "*/de-en.txt", "*/jquery_351.js"
+	],
+	"folder_exclude_patterns":
+	[
+		"crawler",
+		"fake_articles_date_testing",
+		"generated_py",
+		"*/build/lib/*",
+		"*/spatially/feedback/*",
+		"*/spatially/interviews/*",
+		"*/spatially/pitch/*",
+		"*/spatially/spatially_be/spatially_container/spatially/postgres_data/*",
+		"*/spatially/spatially_shopify/spatially/.next/*",
+		"*/spatially/spatially_shopify/spatially/node_modules/*",
+		"*postgres_data/base/*",
+	],
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Babel",
+		"Vintage",
+	],
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+}
